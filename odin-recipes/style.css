@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 75%;
+    margin: auto;
+}
+
+.food-img{
+    width: 100%;
+}
+
+h1{
+    text-align: center;
+    display: block;
+    width: fit-content;
+    margin: .75em auto;
+    padding-inline: 2em;
+    background-color: rgba(0, 255, 174, 0.419);
+    border-radius: .5em;
+}
+
+h2{
+    color: red;
+    margin: 1em 0 .3em;
+}
+
+p, ol, ul{
+    color: white;
+    background-color: rgb(73, 73, 73);
+    border-radius: 1em;
+    padding: 1.5em 2em;
+}
+
+ul, ol{
+    width: fit-content;
+}
+
+li{
+    padding-inline: 2em;
+    list-style-type: none;
+}
+
+li:nth-child(odd){
+    color: rgb(228, 104, 104);
+}
