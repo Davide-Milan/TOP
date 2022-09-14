@@ -1,0 +1,77 @@
+/*Roboto font import*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+}
+
+header h1{
+    text-align: center;
+}
+
+.scores{
+    display: flex;
+    justify-content: space-around;
+}
+
+.player, .pc{
+    display: flex;
+    align-items: center;
+}
+
+.player-name::after{
+    content: " - ";
+}
+
+.pc-name::before{
+    content: " - ";
+}
+
+#rock{
+    grid-area: r;
+}
+#paper{
+    grid-area: p;
+}
+#scissors{
+    grid-area: s;
+}
+
+.choice{
+    display: block;
+}
+.new-game{
+    display: block;
+    grid-area: ng;
+}
+.hidden{
+    visibility: hidden;
+}
+
+.grid{
+    max-width: 20em;
+    height: 20em;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas: 
+        "r . p"
+        ". ng ."
+        ". s ."
+    ;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.round-result,
+.result{
+    text-align: center;
+}
+
+.choices{
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+}
