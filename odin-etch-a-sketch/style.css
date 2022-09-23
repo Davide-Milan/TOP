@@ -12,7 +12,7 @@ main{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding-top: 4em;
+    padding: 4em 0;
     margin: 0 auto;
     max-width: 80%;
     align-items: center;
@@ -48,9 +48,10 @@ main{
 
 .settings > *{
     flex: 1 1 33%;
-    height: 10em;
+    height: 100%;
+    aspect-ratio: 3/1;
 }
 
-#color-picker{
-    
+#size-slider{
+    width: 100%;
 }
