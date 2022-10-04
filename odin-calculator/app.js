@@ -6,15 +6,16 @@ const newValueText = document.querySelector('.newValue');
 const equal = document.querySelector('.equal');
 equal.addEventListener('click', () => operate(oldValue[oldValue.length-1], oldValue.slice(0,-2), newValue))
 const comma = document.querySelector('.comma');
-comma.addEventListener('click', () => {
+comma.addEventListener('click', addComma);
+
+function addComma(){    
     if(newValue == '') {
         newValue = '0';
     }
     if((newValue.includes('.'))) return;
     newValue += '.';
-    newValueText.textContent = newValue;    
-});
-
+    newValueText.textContent = newValue;        
+}
 const clearButton = document.querySelector('#clear');
 clearButton.addEventListener('click', clear)
 const deleteDigit = document.querySelector('#delete');
@@ -113,3 +114,16 @@ function divide(a,b){
 }
 function sum(a,b){return `${a+b}`;}
 function subtract(a,b){return `${a-b}`;}
+
+function handleKeyboardInput(e) {
+    console.log(e.key);
+    if (e.key >= 0 && e.key <= 9) writeDigit(e.key);
+    if (e.key === '.') addComma();
+    if (e.key === '=') operate(oldValue[oldValue.length-1], oldValue.slice(0,-2), newValue);
+    if (e.key === 'Backspace') deleteDigit();
+    if (e.key === 'Escape') clear();
+    if (e.key === '+' || e.key === '-' || e.key === '/') writeOperator(e.key);
+    if (e.key === '*') writeOperator('x');
+  }
+  
+  window.addEventListener('keydown', handleKeyboardInput);
